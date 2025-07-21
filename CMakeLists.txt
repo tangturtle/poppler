@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.22.0 FATAL_ERROR)
 
+set(CMAKE_TOOLCHAIN_FILE $ENV{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake)
+
 project(poppler)
 
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules)
@@ -97,6 +99,7 @@ option(EXTRA_WARN "Enable extra compile warnings" OFF)
 set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 
 include("${CMAKE_CURRENT_SOURCE_DIR}/override.cmake")
+
 message(STATUS "************************************************************")
 set(TESTDATADIR "${CMAKE_SOURCE_DIR}/../test" CACHE STRING "Specify test data dir.")
 if(NOT (EXISTS ${TESTDATADIR} AND EXISTS ${TESTDATADIR}/test-poppler.c))

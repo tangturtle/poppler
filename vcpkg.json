@@ -1,0 +1,12 @@
+{
+    "name": "poppler",
+    "dependencies": [
+        "freetype",
+        "libjpeg-turbo",
+        "cairo",
+        "tiff",
+        "openjpeg",
+        "lcms",
+        "curl"
+    ]
+}

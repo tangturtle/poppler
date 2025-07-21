@@ -1,5 +1,5 @@
 /* ANSI-C code produced by gperf version 3.1 */
-/* Command-line: gperf poppler/TimesRomanWidths.gperf  */
+/* Command-line: 'C:\\Users\\21421\\Desktop\\poppler\\build\\vcpkg_installed\\x64-windows\\tools\\gperf\\gperf.exe' poppler/TimesRomanWidths.gperf  */
 /* Computed positions: -k'1-2,5,$' */
 
 #if !((' ' == 32) && ('!' == 33) && ('"' == 34) && ('#' == 35) && ('%' == 37) && ('&' == 38) && ('\'' == 39) && ('(' == 40) && (')' == 41) && ('*' == 42) && ('+' == 43) && (',' == 44) && ('-' == 45) && ('.' == 46) && ('/' == 47)           \
