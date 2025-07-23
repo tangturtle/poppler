@@ -5,7 +5,7 @@ set(BUILD_SHARED_LIBS ON CACHE BOOL "Build as shared library (recommended for Qt
 set(ENABLE_RELOCATABLE ON CACHE BOOL "Enable relocatable library on Windows" FORCE)
 
 # 前端接口配置 - 只启用 Qt6
-set(ENABLE_QT6 OFF CACHE BOOL "Enable Qt6 wrapper (required)" FORCE)
+set(ENABLE_QT6 ON CACHE BOOL "Enable Qt6 wrapper (required)" FORCE)
 set(ENABLE_QT5 OFF CACHE BOOL "Disable Qt5 wrapper" FORCE)
 set(ENABLE_GLIB OFF CACHE BOOL "Disable GLib wrapper" FORCE)
 set(ENABLE_CPP OFF CACHE BOOL "Disable C++ wrapper" FORCE)
