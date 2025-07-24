@@ -1,0 +1,12 @@
+prefix=C:/Users/21421/Desktop/poppler/shared
+libdir=C:/Program Files (x86)/poppler/lib
+includedir=C:/Program Files (x86)/poppler/include
+
+Name: poppler-qt6
+Description: Qt6 bindings for poppler
+Version: 25.07.90
+Requires: 
+Requires.private: poppler = 25.07.90
+
+Libs: -L${libdir} -lpoppler-qt6
+Cflags: -I${includedir}/poppler/qt6

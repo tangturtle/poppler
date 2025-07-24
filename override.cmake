@@ -1,7 +1,7 @@
 # override.cmake - 优化后的 Poppler 构建选项配置
 
 # 基础构建配置
-set(BUILD_SHARED_LIBS ON CACHE BOOL "Build as shared library (recommended for Qt)" FORCE)
+set(BUILD_SHARED_LIBS OFF CACHE BOOL "Build as shared library (recommended for Qt)" FORCE)
 set(ENABLE_RELOCATABLE ON CACHE BOOL "Enable relocatable library on Windows" FORCE)
 
 # 前端接口配置 - 只启用 Qt6
@@ -11,7 +11,7 @@ set(ENABLE_GLIB OFF CACHE BOOL "Disable GLib wrapper" FORCE)
 set(ENABLE_CPP OFF CACHE BOOL "Disable C++ wrapper" FORCE)
 
 # 测试程序配置
-set(BUILD_QT6_TESTS ON CACHE BOOL "Enable Qt6 tests (recommended for verification)" FORCE)
+set(BUILD_QT6_TESTS OF CACHE BOOL "Enable Qt6 tests (recommended for verification)" FORCE)
 set(BUILD_GTK_TESTS OFF CACHE BOOL "Disable GTK tests" FORCE)
 set(BUILD_QT5_TESTS OFF CACHE BOOL "Disable Qt5 tests" FORCE)
 set(BUILD_CPP_TESTS OFF CACHE BOOL "Disable CPP tests" FORCE)
@@ -46,3 +46,11 @@ set(RUN_GPERF_IF_PRESENT ON CACHE BOOL "Enable gperf if available" FORCE)
 
 # 不稳定的API
 set(ENABLE_UNSTABLE_API_ABI_HEADERS OFF CACHE BOOL "Disable unstable headers" FORCE)
+
+set(BUILD_SHARED_LIBS ON CACHE BOOL "Build shared libraries" FORCE)
+set(ENABLE_RELOCATABLE ON CACHE BOOL "Enable relocatable library on Windows" FORCE)
+set(CMAKE_INSTALL_PREFIX "${CMAKE_CURRENT_SOURCE_DIR}/shared/" CACHE PATH "Installation directory" FORCE)
+# 设置安装目录结构
+set(CMAKE_INSTALL_LIBDIR "lib" CACHE PATH "Library directory")
+set(CMAKE_INSTALL_INCLUDEDIR "include" CACHE PATH "Include directory")
+set(CMAKE_INSTALL_BINDIR "bin" CACHE PATH "Binary directory")

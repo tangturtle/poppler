@@ -99,8 +99,10 @@ option(EXTRA_WARN "Enable extra compile warnings" OFF)
 set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 
 include("${CMAKE_CURRENT_SOURCE_DIR}/override.cmake")
+file(MAKE_DIRECTORY "${CMAKE_INSTALL_PREFIX}")
 
-message(STATUS "************************************************************")
+message(STATUS "--------------------------------")
+
 set(TESTDATADIR "${CMAKE_SOURCE_DIR}/../test" CACHE STRING "Specify test data dir.")
 if(NOT (EXISTS ${TESTDATADIR} AND EXISTS ${TESTDATADIR}/test-poppler.c))
   message(WARNING "
@@ -668,8 +670,11 @@ if(MINGW AND BUILD_SHARED_LIBS)
     set_target_properties(poppler PROPERTIES SUFFIX "-${POPPLER_SOVERSION}${CMAKE_SHARED_LIBRARY_SUFFIX}")
 endif()
 target_link_libraries(poppler LINK_PRIVATE ${poppler_LIBS})
-install(TARGETS poppler RUNTIME DESTINATION bin LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR} ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
-
+install(TARGETS poppler
+    RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}"
+    LIBRARY DESTINATION "${CMAKE_INSTALL_LIBDIR}"
+    ARCHIVE DESTINATION "${CMAKE_INSTALL_LIBDIR}"
+)
 if(ENABLE_UNSTABLE_API_ABI_HEADERS)
   set(poppler_poppler_installed_headers
     poppler/Annot.h
